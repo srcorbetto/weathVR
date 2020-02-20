@@ -5,7 +5,6 @@
 
     <!-- Aframe Add-ons -->
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
@@ -57,10 +56,10 @@
       <!-- Weather Objects -->
       <a-entity
         class="object"
-        gltf-model=""
+        gltf-model="#sun"
         position="-1.50969 3.294 0"
         scale="1 1 1"
-        animation__upDown="property: position; to: -1.50969 2.94 0; from: -1.50969 3.094 0; dur: 5000; loop: true; ease: linear; dir: alternate"
+        animation__upDown="property: position; to: -1.50969 2.94 0; from: -1.50969 3.094 0; dur: 5000; loop: true; easing: linear; dir: alternate"
       >
       </a-entity>
       <a-entity
