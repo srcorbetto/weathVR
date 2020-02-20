@@ -1,8 +1,7 @@
 <html>
   <head>
-
     <!-- Aframe -->
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 
     <!-- Aframe Add-ons -->
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
@@ -13,178 +12,211 @@
   <body>
     <a-scene>
       <a-assets>
+        <!-- Textures -->
+        <img id="grass" src="/assets/ground.jpg" />
+        <img id="snow" src="/assets/snow.jpg" />
+        <img id="tile" src="/assets/tile.jpg" />
 
-          <!-- Textures -->
-          <img id="grass" src="/assets/ground.jpg">
-          <img id="snow" src="/assets/snow.jpg">
-          <img id="tile" src="/assets/tile.jpg">
+        <!-- Lightning -->
+        <a-asset-item
+          id="lightning"
+          src="/assets/PUSHILIN_lightning_bolt/PUSHILIN_lightning_bolt.gltf"
+        >
+        </a-asset-item>
 
-          <!-- Lightning -->
-          <a-asset-item id="lightning"  
-                        src="/assets/PUSHILIN_lightning_bolt/PUSHILIN_lightning_bolt.gltf">
-          </a-asset-item>
+        <!-- Cloud -->
+        <a-asset-item id="cloud" src="/assets/Cloud/Cloud_01.gltf">
+        </a-asset-item>
 
-          <!-- Cloud -->
-          <a-asset-item id="cloud"      
-                        src="/assets/Cloud/Cloud_01.gltf">
-          </a-asset-item>
+        <!-- Sun -->
+        <a-asset-item id="sun" src="/assets/Sun/Sun_01.gltf"> </a-asset-item>
 
-          <!-- Sun -->
-          <a-asset-item id="sun"      
-                        src="/assets/Sun/Sun_01.gltf">
-          </a-asset-item>
-
-          <!-- Moon -->
-          <a-asset-item id="moon"      
-                        src="/assets/Moon/Moon.gltf">
-          </a-asset-item>
+        <!-- Moon -->
+        <a-asset-item id="moon" src="/assets/Moon/Moon.gltf"> </a-asset-item>
       </a-assets>
 
       <!-- Camera -->
-      <a-entity camera=""
-                wasd-controls="false"
-                position="0.63103 1.6 1.48536" rotation="-4.0107045659157645 4.812845479098951 0" look-controls=""
-                aframe-injected="" data-aframe-inspector-original-camera="">
-          <a-entity cursor="fuse: true; fuseTimeout: 300"
-                    position="0 0 -1"
-                    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
-                    material="color: teal; shader: flat">
-          </a-entity>
+      <a-entity
+        camera=""
+        wasd-controls="false"
+        position="0.63103 1.6 1.48536"
+        rotation="-4.0107045659157645 4.812845479098951 0"
+        look-controls=""
+        aframe-injected=""
+        data-aframe-inspector-original-camera=""
+      >
+        <a-entity
+          cursor="fuse: true; fuseTimeout: 300"
+          position="0 0 -1"
+          geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+          material="color: teal; shader: flat"
+        >
+        </a-entity>
       </a-entity>
 
       <!-- Weather Objects -->
-      <a-entity class="object"     
-                gltf-model=""
-                position="-1.50969 3.294 0"
-                scale="1 1 1"
-                animation__upDown="property: position; to: -1.50969 2.94 0; from: -1.50969 3.094 0; dur: 5000; loop: true; ease: linear; dir: alternate">
+      <a-entity
+        class="object"
+        gltf-model=""
+        position="-1.50969 3.294 0"
+        scale="1 1 1"
+        animation__upDown="property: position; to: -1.50969 2.94 0; from: -1.50969 3.094 0; dur: 5000; loop: true; ease: linear; dir: alternate"
+      >
       </a-entity>
-      <a-entity class="object"     
-                gltf-model=""
-                position="1.45048 3.04266 -3.54278"
-                scale="1 1 1"
-                animation__updown="property:position;to:1.45048 3.54266 -3.54278;from:1.45048 3.04266 -3.54278;dur:5000;loop:true;dir:alternate; delay: 500">
+      <a-entity
+        class="object"
+        gltf-model=""
+        position="1.45048 3.04266 -3.54278"
+        scale="1 1 1"
+        animation__updown="property:position;to:1.45048 3.54266 -3.54278;from:1.45048 3.04266 -3.54278;dur:5000;loop:true;dir:alternate; delay: 500"
+      >
       </a-entity>
-      <a-entity class="object" 
-                gltf-model=""
-                position="2.91646 3.31903 -0.20131"
-                scale="1 1 1"
-                animation__updown="property:position;to:2.91646 2.85 -0.20131;from:2.91646 3.31903 -0.20131;dur:5000;loop: true;dir:alternate">
+      <a-entity
+        class="object"
+        gltf-model=""
+        position="2.91646 3.31903 -0.20131"
+        scale="1 1 1"
+        animation__updown="property:position;to:2.91646 2.85 -0.20131;from:2.91646 3.31903 -0.20131;dur:5000;loop: true;dir:alternate"
+      >
       </a-entity>
-      <a-entity class="object" 
-                gltf-model=""
-                position="0.21087 3.28344 3.01782"
-                scale="1 1 1"
-                animation__updown="property:position;to:0.21087 3.28344 3.01782;from:0.21087 2.75 3.01782;dur:5000;loop:true;dir:alternate; delay: 350">
+      <a-entity
+        class="object"
+        gltf-model=""
+        position="0.21087 3.28344 3.01782"
+        scale="1 1 1"
+        animation__updown="property:position;to:0.21087 3.28344 3.01782;from:0.21087 2.75 3.01782;dur:5000;loop:true;dir:alternate; delay: 350"
+      >
       </a-entity>
 
       <!-- Sun/Moon -->
-      <a-entity id="sunMoonObject"
-                gltf-model=""
-                position="6.67643 4.51562 -6.52221"
-                rotation="-80.64266374907311 -34.43361757177221 179.99927500270914"
-                visible="false">
+      <a-entity
+        id="sunMoonObject"
+        gltf-model=""
+        position="6.67643 4.51562 -6.52221"
+        rotation="-80.64266374907311 -34.43361757177221 179.99927500270914"
+        visible="false"
+      >
       </a-entity>
 
       <!-- Sky -->
       <a-sky id="sky" color="#111111"></a-sky>
 
       <!-- Ground -->
-      <a-cylinder id="ground"
-                  position="0 0 0"
-                  src="#tile"
-                  material="repeat: 8 8"
-                  geometry="height:0.001; radius:6">
+      <a-cylinder
+        id="ground"
+        position="0 0 0"
+        src="#tile"
+        material="repeat: 8 8"
+        geometry="height:0.001; radius:6"
+      >
       </a-cylinder>
 
       <!-- Precipitation -->
-      <a-entity id="precipitation"
-                position="0 2.25 -15"
-                particle-system="enabled: false">
+      <a-entity
+        id="precipitation"
+        position="0 2.25 -15"
+        particle-system="enabled: false"
+      >
       </a-entity>
 
       <!-- Start Menu -->
       <!-- Menu 1 -->
-      <a-text geometry="primitive:plane;width:2;height:.35"
-              material="color:rgb(0,0,0); opacity: .8"
-              position="-1.07619 1.76 -2.21527"
-              text="value:LONDON;align:center"
-              class="text-trigger"
-              id="london"
-              data-city="2643743"
-              animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
-              animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
-              animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave">
+      <a-text
+        geometry="primitive:plane;width:2;height:.35"
+        material="color:rgb(0,0,0); opacity: .8"
+        position="-1.07619 1.76 -2.21527"
+        text="value:LONDON;align:center"
+        class="text-trigger"
+        id="london"
+        data-city="2643743"
+        animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
+        animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
+        animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave"
+      >
       </a-text>
       <!-- Menu 2 -->
-      <a-text geometry="primitive:plane;width:2;height:.35"
-              material="color:rgb(0,0,0); opacity: .8"
-              position="-1.07619 1.4 -2.21527"
-              text="value:MEXICO CITY;align:center"
-              class="text-trigger"
-              id="mexico-city"
-              data-city="3530597"
-              animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
-              animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
-              animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave">
+      <a-text
+        geometry="primitive:plane;width:2;height:.35"
+        material="color:rgb(0,0,0); opacity: .8"
+        position="-1.07619 1.4 -2.21527"
+        text="value:MEXICO CITY;align:center"
+        class="text-trigger"
+        id="mexico-city"
+        data-city="3530597"
+        animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
+        animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
+        animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave"
+      >
       </a-text>
       <!-- Menu 3 -->
-      <a-text geometry="primitive:plane;width:2;height:.35"
-              material="color:rgb(0,0,0); opacity: .8"
-              position="-1.07619 1.04 -2.21527"
-              text="value:MINNEAPOLIS;align:center"
-              class="text-trigger"
-              id="minneapolis"
-              data-city="5037649"
-              animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
-              animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
-              animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave">
+      <a-text
+        geometry="primitive:plane;width:2;height:.35"
+        material="color:rgb(0,0,0); opacity: .8"
+        position="-1.07619 1.04 -2.21527"
+        text="value:MINNEAPOLIS;align:center"
+        class="text-trigger"
+        id="minneapolis"
+        data-city="5037649"
+        animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
+        animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
+        animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave"
+      >
       </a-text>
       <!-- Menu 4 -->
-      <a-text geometry="primitive:plane;width:2;height:.35"
-              material="color:rgb(0,0,0); opacity: .8"
-              position="-1.07619 .68 -2.21527"
-              text="value:TOKYO;align:center"
-              class="text-trigger"
-              id="tokyo"
-              data-city="1850147"
-              animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
-              animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
-              animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave">
+      <a-text
+        geometry="primitive:plane;width:2;height:.35"
+        material="color:rgb(0,0,0); opacity: .8"
+        position="-1.07619 .68 -2.21527"
+        text="value:TOKYO;align:center"
+        class="text-trigger"
+        id="tokyo"
+        data-city="1850147"
+        animation__clickColor="property: material.color; to: #CCFF00; dur: 100; startEvents: click"
+        animation__hoverColorEnter="property: material.color; to: #3A3A3A; dur: 100; startEvents: mouseenter"
+        animation__hoverColorLeave="property: material.color; to: #000; dur: 100; startEvents: mouseleave"
+      >
       </a-text>
       <!-- Data City -->
-      <a-text position="1.514 1.80235 -2.2159"
-              text="align:center"
-              id="data-city">
+      <a-text
+        position="1.514 1.80235 -2.2159"
+        text="align:center"
+        id="data-city"
+      >
       </a-text>
       <!-- Data Temp -->
-      <a-text position="0.076 1.13197 -2.2159"
-              text="width:21;align:left"
-              id="data-temp">
-        </a-text>
+      <a-text
+        position="0.076 1.13197 -2.2159"
+        text="width:21;align:left"
+        id="data-temp"
+      >
+      </a-text>
       <!-- Data Plane -->
-      <a-plane material="color: #000; opacity: .8"
-               geometry="width:3;height:1.43"
-               position="1.436 1.222 -2.21527">
+      <a-plane
+        material="color: #000; opacity: .8"
+        geometry="width:3;height:1.43"
+        position="1.436 1.222 -2.21527"
+      >
       </a-plane>
-      <a-image src="#"
-               position="2.274 1.13683 -2.201"
-               scale="0.85 0.85 0.85"
-               material="opacity: 0"
-               geometry=""
-               id="data-icon">
+      <a-image
+        src="#"
+        position="2.274 1.13683 -2.201"
+        scale="0.85 0.85 0.85"
+        material="opacity: 0"
+        geometry=""
+        id="data-icon"
+      >
       </a-image>
       <!-- End Menu -->
+    </a-scene>
 
-  </a-scene>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-
-  <!-- Logic -->
-  <script src="/script.js"></script>
+    <!-- Logic -->
+    <script src="/script.js"></script>
   </body>
 </html>
